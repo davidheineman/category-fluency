@@ -1,0 +1,12 @@
+numpy
+transformers
+torch
+matplotlib
+gensim
+openai
+accelerate
+scikit-learn
+pandas
+nltk
+flask
+vllm
