@@ -1,12 +1,7 @@
-numpy
-transformers
-torch
+numpy==1.24.2
+transformers==4.38.2
+torch==2.1.2
+flask==2.3.3
+vllm==0.3.3
 matplotlib
-gensim
-openai
-accelerate
-scikit-learn
-pandas
 nltk
-flask
-vllm

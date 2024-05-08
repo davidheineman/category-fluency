@@ -8,18 +8,13 @@ N_EXEMPLARS = 30
 
 DEFAULT_KWARGS = {
     'use_beam_search': True,
-    'num_beams': N_EXEMPLARS,
-    'num_return_sequences': N_EXEMPLARS,
+    'n': N_EXEMPLARS,
+    'best_of': N_EXEMPLARS,
     'early_stopping': True,
     'stop': SEP,
     'max_new_tokens': 5,
-    'logprobs': N_EXEMPLARS,
-    'output_scores': True,
-    'return_dict_in_generate': False, 
-    'do_sample': False,
-    'top_p': None,
-    'temperature': None,
-    'epsilon_cutoff': None,
+    'logprobs': 5,
+    'temperature': 0,
 }
 
 VLLM_DIR = str(os.environ.get("HF_HOME"))
