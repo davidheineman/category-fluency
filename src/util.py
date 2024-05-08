@@ -1,4 +1,5 @@
 import torch
+import matplotlib.pyplot as plt
 
 
 def calculate_entropy(probs, e=1e-10):
@@ -61,3 +62,21 @@ def render_table(results):
 """
 
     return table
+
+
+def visualize_exemplar_dist(exemplars, probs, prev_exemplars=['animal'], colors=None):
+    plt.figure(figsize=(7, 2))
+    plt.plot(exemplars, probs, color='black')
+    plt.fill_between(exemplars, probs, color='red', alpha=0.3)
+    plt.ylim(0, max(probs) + 0.01)
+    plt.xlim(0, len(exemplars) - 1)
+    plt.xticks(rotation=45, fontsize=7, ha='right')
+    plt.xlabel(r'$x_i$')
+    plt.ylabel(r'$p(x_i|x_{<i})$')
+    plt.title(r'$p(x_i|' + "\,\,".join(prev_exemplars) + ')$')
+
+    if colors:
+        for i, label in enumerate(plt.gca().xaxis.get_ticklabels()):
+            label.set_color(colors[i])
+
+    plt.show()
