@@ -1,4 +1,3 @@
-from src.llm import generate_endpoint, FLUENCY_PROMPT
 import networkx as nx
 import random
 import torch
@@ -132,6 +131,8 @@ def llm_step(graph, previous_seq, beta_l, beta_g, port, category_map=None):
     """
     Use a language model endpoint as a local cue to determine the next node.
     """
+    from src.llm import generate_endpoint, FLUENCY_PROMPT
+    
     probs = {}
     current_node = previous_seq[-1]
 
