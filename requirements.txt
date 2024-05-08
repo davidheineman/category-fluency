@@ -3,5 +3,6 @@ transformers==4.38.2
 torch==2.1.2
 flask==2.3.3
 vllm==0.3.3
+networkx==3.2.1
 matplotlib
 nltk

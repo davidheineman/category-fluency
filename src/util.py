@@ -1,5 +1,5 @@
 import torch
-import torch.nn.functional as F
+
 
 def calculate_entropy(probs, e=1e-10):
     if not isinstance(probs, torch.Tensor):
@@ -7,6 +7,7 @@ def calculate_entropy(probs, e=1e-10):
 
     probs = torch.clamp(probs, min=e, max=1-e)
     return -torch.sum(probs * torch.log2(probs))
+
 
 def render_table(results):
     """
