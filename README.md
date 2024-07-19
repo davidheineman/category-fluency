@@ -22,8 +22,14 @@ For the original sources:
 
 For analysis notebooks, simply install the dependencies and run the notebooks:
 
-```
+```sh
 pip install -r requirements.txt
+
+# Download GloVe embeddings
+curl -O https://downloads.cs.stanford.edu/nlp/data/glove.6B.zip
+unzip glove.6B
+mv glove.6B.300d.txt data/glove.6B.300d.txt
+rm glove.6B.50d.txt glove.6B.100d.txt glove.6B.200d.txt glove.6B.zip
 ```
 
 #### LLM Server
